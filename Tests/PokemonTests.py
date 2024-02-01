@@ -1,6 +1,6 @@
 from Requests import PokemonRequests
-from jsonpath import jsonpath
 
+from Utils import StringUtils
 from Utils.AssertionUtils import AssertionUtils
 
 
@@ -17,7 +17,8 @@ def test_1_get_type_has_exactly_20_different_types():
 def test_2_fire_type_pokemons():
     body = PokemonRequests.get_type()
     fire_url = AssertionUtils.validate_jsonpath(body, 'results[?(@.name=="fire")].url')[0]
-    fire_types = PokemonRequests.get_type(fire_url)
+    type_id = StringUtils.get_url_id(fire_url)
+    fire_types = PokemonRequests.get_type(type_id)
     fire_pokemon_names = AssertionUtils.validate_jsonpath(fire_types, 'pokemon..pokemon.name')
     AssertionUtils.validate_in_list('charmander', fire_pokemon_names, 'pokemon name')
     AssertionUtils.validate_not_in_list('bulbasaur', fire_pokemon_names, 'pokemon name')
