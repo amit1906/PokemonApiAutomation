@@ -11,3 +11,7 @@
 
 - I added prints (logging) to each action do i'm doing within the helpers methods,
   like sending requests, asserting, etc...
+
+- I added comments in the code in case some implementation is not clear.
+
+Thanks
