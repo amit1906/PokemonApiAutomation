@@ -8,3 +8,6 @@
   to avoid code duplications.
 
 - The project has structure of: ExpectedFiles, Requests, Tests and Utils
+
+- I added prints (logging) to each action do i'm doing within the helpers methods,
+  like sending requests, asserting, etc...
