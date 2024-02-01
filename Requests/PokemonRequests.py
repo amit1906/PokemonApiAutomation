@@ -1,6 +1,5 @@
-import ApiConfig
 from Requests import GeneralRequests
-from Utils import StringUtils
+from Utils import StringUtils, ApiConfig
 from Utils.AssertionUtils import AssertionUtils
 
 
